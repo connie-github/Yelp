@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //
 //  DropdownCell.swift
 //  Yelp
@@ -25,18 +24,3 @@ class DropdownCell: UITableViewCell {
         dropdownIcon.image = state.getIcon()
     }
 }
-||||||| merged common ancestors
-=======
-//
-//  DropdownCell.swift
-//  Yelp
-//
-
-import UIKit
-
-class DropdownCell: UITableViewCell {
-    @IBOutlet weak var dropdownLabel: UILabel!
-    @IBOutlet weak var dropdownIcon: UIImageView!
-
-}
->>>>>>> 3a62027eafb51e94a152d659c15141ee1dd92c84
