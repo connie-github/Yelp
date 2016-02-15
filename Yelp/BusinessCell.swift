@@ -17,21 +17,20 @@ class BusinessCell: UITableViewCell {
     
     var business: Business! {
         didSet {
-            nameLabel.text = business.name
             thumbImageView.setImageWithURL(business.imageURL!)
-            categoriesLabel.text = business.categories
-            addressLabel.text = business.address
-            reviewCountLabel.text = "\(business.reviewCount!) Reviews"
-            ratingImageView.setImageWithURL(business.ratingImageURL!)
+            nameLabel.text = business.name
             distanceLabel.text = business.distance
+            ratingImageView.setImageWithURL(business.ratingImageURL!)
+            reviewCountLabel.text = "\(business.reviewCount!) Reviews"
+            addressLabel.text = business.address
+            categoriesLabel.text = business.categories
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
-        thumbImageView.layer.cornerRadius = 3
+        thumbImageView.layer.cornerRadius = 4
         thumbImageView.clipsToBounds = true
         
         nameLabel.preferredMaxLayoutWidth = nameLabel.frame.size.width
