@@ -24,6 +24,7 @@ class SwitchCell: UITableViewCell {
         onSwitch.addTarget(self, action: "switchValueChanged", forControlEvents: UIControlEvents.ValueChanged)
     }
 
+<<<<<<< HEAD
     func switchValueChanged() {
         delegate?.switchCell(self, didChangeValue: onSwitch.on)
     }
@@ -33,6 +34,13 @@ class SwitchCell: UITableViewCell {
         onSwitch.on = switchedOn
     }
     
+||||||| merged common ancestors
+=======
+    func switchValueChanged() {
+        delegate?.switchCell(self, didChangeValue: onSwitch.on)
+    }
+    
+>>>>>>> 3a62027eafb51e94a152d659c15141ee1dd92c84
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         

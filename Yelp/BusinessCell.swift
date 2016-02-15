@@ -15,6 +15,32 @@ class BusinessCell: UITableViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
     
+<<<<<<< HEAD
+||||||| merged common ancestors
+    var business: Business! {
+        didSet {
+            nameLabel.text = business.name
+            thumbImageView.setImageWithURL(business.imageURL!)
+            categoriesLabel.text = business.categories
+            addressLabel.text = business.address
+            reviewCountLabel.text = "\(business.reviewCount!) Reviews"
+            ratingImageView.setImageWithURL(business.ratingImageURL!)
+            distanceLabel.text = business.distance
+        }
+    }
+=======
+    var business: Business! {
+        didSet {
+            thumbImageView.setImageWithURL(business.imageURL!)
+            nameLabel.text = business.name
+            distanceLabel.text = business.distance
+            ratingImageView.setImageWithURL(business.ratingImageURL!)
+            reviewCountLabel.text = "\(business.reviewCount!) Reviews"
+            addressLabel.text = business.address
+            categoriesLabel.text = business.categories
+        }
+    }
+>>>>>>> 3a62027eafb51e94a152d659c15141ee1dd92c84
     
     override func awakeFromNib() {
         super.awakeFromNib()

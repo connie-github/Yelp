@@ -8,7 +8,6 @@ import UIKit
 class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, FiltersViewControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-
     var businesses: [Business]!
     var filters: Filters? = Filters()
     var searchBar = UISearchBar()
@@ -36,10 +35,10 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     
     func fetchBusinesses() {
         if let filters = filters {
-            Business.searchWithTerm(filters.term!, sort: filters.sort, categories: filters.categories, deals: filters.deals, radius: filters.radius) { (businesses: [Business]!, error: NSError!) -> Void in
+            Business.search(self.search, completion: { (businesses: [Business]!, error: NSError!) in
                 self.businesses = businesses
                 self.tableView.reloadData()
-            }
+            })
         }
     }
 
@@ -63,12 +62,13 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         cell.categoriesLabel.text = business.categories
         cell.distanceLabel.text = business.distance
         cell.reviewCountLabel.text = "\(business.reviewCount!) Reviews"
-        
+
         return cell
     }
     
+        
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText == "" {
+        if (searchText == "") {
             filters!.term = "Restaurants"
         } else {
             filters!.term = searchText
@@ -101,5 +101,5 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+        
 }
