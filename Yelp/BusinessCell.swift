@@ -15,23 +15,11 @@ class BusinessCell: UITableViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
     
-    var business: Business! {
-        didSet {
-            nameLabel.text = business.name
-            thumbImageView.setImageWithURL(business.imageURL!)
-            categoriesLabel.text = business.categories
-            addressLabel.text = business.address
-            reviewCountLabel.text = "\(business.reviewCount!) Reviews"
-            ratingImageView.setImageWithURL(business.ratingImageURL!)
-            distanceLabel.text = business.distance
-        }
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
-        thumbImageView.layer.cornerRadius = 3
+        thumbImageView.layer.cornerRadius = 4
         thumbImageView.clipsToBounds = true
         
         nameLabel.preferredMaxLayoutWidth = nameLabel.frame.size.width
